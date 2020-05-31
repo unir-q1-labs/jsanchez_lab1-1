@@ -1,11 +1,132 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_1F4DED50-8875-46EB-BDD8-E547680A3E50" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_9EF42A50-5D6C-4A36-93F0-D48990B5A457" name="Traffic Violation" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_1F4DED50-8875-46EB-BDD8-E547680A3E50">
   <dmn:extensionElements/>
+  <dmn:itemDefinition id="_17A617EB-42CB-4077-908C-87D55D74E011" name="tDriver" isCollection="false">
+    <dmn:itemComponent id="_65CAFBB8-594A-41A9-8DBE-10EA244E35F2" name="Name" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_6A06E96E-DCE5-4C84-B66F-2BA2730B2499" name="Age" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_B3F7AD72-8EDB-4A8E-98A6-D961DEAD7FED" name="State" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_49D563E1-7893-4CF7-96BF-4177041F3CDA" name="City" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_C620CD85-56E5-45A8-B29B-CC735B5CE2D9" name="Points" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_88A24914-59C1-4636-AA5A-020600303D40" name="Insert a name" isCollection="false">
+      <dmn:typeRef>Any</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_378A3E95-5B81-4268-ADE8-6F00792B1A15" name="tViolation" isCollection="false">
+    <dmn:itemComponent id="_6E40DC51-73F4-40CA-835E-59FD1D6E16DE" name="Code" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_D0882BE8-95D4-4099-A0D4-B8DFF3752B32" name="Date" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_8ED75FD7-DD80-423E-86F6-FE13B3ACB7F4" name="Type" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+      <dmn:allowedValues kie:constraintType="enumeration" id="_9B6B09CB-F74A-418E-AB29-3EB105965123">
+        <dmn:text>"speed", "parking", "driving under the influence"</dmn:text>
+      </dmn:allowedValues>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_8BCB60BC-CC3C-42C0-9020-8C9CCC950AF3" name="Speed Limit" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_86C79FC1-E786-45AD-8D0E-9ADF2BD74D4C" name="Actual Speed" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_E21DF486-48FA-4350-9C9A-BF84B0EC2202" name="tFine" isCollection="false">
+    <dmn:itemComponent id="_ACC52EEF-9CD7-48E4-A875-263D4BDA4651" name="Amount" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_674D2D04-D871-4774-8621-0EEB9CB316D3" name="Points" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_1F7032AA-227F-4CFF-A859-924CC9C0C71C" name="Driver">
+    <dmn:extensionElements/>
+    <dmn:variable id="_DF918020-AA82-4441-8513-00E37A689187" name="Driver"/>
+  </dmn:inputData>
+  <dmn:decision id="_29CECBD9-DCB9-41F3-AA57-3EA086D3604A" name="Fine">
+    <dmn:extensionElements/>
+    <dmn:variable id="_7D6E1921-66D1-4C82-8A03-3C7CBECABD5A" name="Fine"/>
+    <dmn:informationRequirement id="_F0AFDB64-60F5-4D82-BA8A-4E782CB958F5">
+      <dmn:requiredInput href="#_A9BA53B4-CD6D-4056-BD59-7FFC8594EC35"/>
+    </dmn:informationRequirement>
+  </dmn:decision>
+  <dmn:inputData id="_A9BA53B4-CD6D-4056-BD59-7FFC8594EC35" name="Violation">
+    <dmn:extensionElements/>
+    <dmn:variable id="_BE32912F-9660-4028-A2AA-A926BF28F3DF" name="Violation"/>
+  </dmn:inputData>
+  <dmn:decision id="_A2028AD5-AA31-4C79-B70C-926CA21D4919" name="Should the driver be suspended?">
+    <dmn:extensionElements/>
+    <dmn:variable id="_EDE46E05-0C50-4152-BE55-51FA68F1FED2" name="Should the driver be suspended?"/>
+    <dmn:informationRequirement id="_A8BED5F2-4280-4F06-A7EA-0384D58BC1EE">
+      <dmn:requiredInput href="#_1F7032AA-227F-4CFF-A859-924CC9C0C71C"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_E2A2CE22-1548-4F95-8D87-FF2B3DD1BBD0">
+      <dmn:requiredDecision href="#_29CECBD9-DCB9-41F3-AA57-3EA086D3604A"/>
+    </dmn:informationRequirement>
+  </dmn:decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <di:extension>
         <kie:ComponentsWidthsExtension/>
       </di:extension>
+      <dmndi:DMNShape id="dmnshape-_1F7032AA-227F-4CFF-A859-924CC9C0C71C" dmnElementRef="_1F7032AA-227F-4CFF-A859-924CC9C0C71C" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="305" y="478" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_A2028AD5-AA31-4C79-B70C-926CA21D4919" dmnElementRef="_A2028AD5-AA31-4C79-B70C-926CA21D4919" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="512" y="125" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_29CECBD9-DCB9-41F3-AA57-3EA086D3604A" dmnElementRef="_29CECBD9-DCB9-41F3-AA57-3EA086D3604A" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="782" y="329" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_A9BA53B4-CD6D-4056-BD59-7FFC8594EC35" dmnElementRef="_A9BA53B4-CD6D-4056-BD59-7FFC8594EC35" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="782" y="478" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_A8BED5F2-4280-4F06-A7EA-0384D58BC1EE" dmnElementRef="_A8BED5F2-4280-4F06-A7EA-0384D58BC1EE">
+        <di:waypoint x="355" y="478"/>
+        <di:waypoint x="562" y="150"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-_E2A2CE22-1548-4F95-8D87-FF2B3DD1BBD0" dmnElementRef="_E2A2CE22-1548-4F95-8D87-FF2B3DD1BBD0">
+        <di:waypoint x="832" y="329"/>
+        <di:waypoint x="562" y="150"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-_F0AFDB64-60F5-4D82-BA8A-4E782CB958F5" dmnElementRef="_F0AFDB64-60F5-4D82-BA8A-4E782CB958F5">
+        <di:waypoint x="832" y="478"/>
+        <di:waypoint x="832" y="379"/>
+      </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </dmn:definitions>
