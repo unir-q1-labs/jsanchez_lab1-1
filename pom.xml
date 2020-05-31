@@ -6,7 +6,7 @@
   <artifactId>traffic-violation</artifactId>
   <version>1.0.0</version>
   <packaging>kjar</packaging>
-  <name>lab1-1</name>
+  <name>lab1</name>
   <description></description>
   <dependencies>
     <dependency>
