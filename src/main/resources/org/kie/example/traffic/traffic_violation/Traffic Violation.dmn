@@ -147,14 +147,14 @@
     </dmn:informationRequirement>
     <dmn:context id="_F807BABB-47F9-4910-A09F-FE5D3A3E4E62">
       <dmn:contextEntry>
-        <dmn:variable id="_0CD29719-67FB-4896-8C53-D87803B5F58F" name="Total Points" typeRef="number"/>
+        <dmn:variable id="_0CD29719-67FB-4896-8C53-D87803B5F58F" name="Total_Points" typeRef="number"/>
         <dmn:literalExpression id="_B1D4E21A-9C33-419F-80BB-94001E7524A8">
           <dmn:text>Driver.Points + Fine.Points </dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
       <dmn:contextEntry>
         <dmn:literalExpression id="_39175A9A-9654-4901-B486-E50AE96A1735">
-          <dmn:text>if Total Points >= 20 then "Yes" Else "No"  </dmn:text>
+          <dmn:text>if Total_Points >= 20 then "Yes" Else "No"  </dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
     </dmn:context>
