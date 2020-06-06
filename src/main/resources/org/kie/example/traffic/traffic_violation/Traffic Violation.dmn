@@ -136,8 +136,8 @@
   </dmn:inputData>
   <dmn:decision id="_A2028AD5-AA31-4C79-B70C-926CA21D4919" name="Should the driver be suspended?">
     <dmn:extensionElements/>
-    <dmn:question>:Should the driver be suspended due to points on his driver license?</dmn:question>
-    <dmn:allowedAnswers>Yes,No</dmn:allowedAnswers>
+    <dmn:question>Should the driver be suspended due to points on his driver license?</dmn:question>
+    <dmn:allowedAnswers>"Yes","No"</dmn:allowedAnswers>
     <dmn:variable id="_EDE46E05-0C50-4152-BE55-51FA68F1FED2" name="Should the driver be suspended?" typeRef="string"/>
     <dmn:informationRequirement id="_A8BED5F2-4280-4F06-A7EA-0384D58BC1EE">
       <dmn:requiredInput href="#_1F7032AA-227F-4CFF-A859-924CC9C0C71C"/>
