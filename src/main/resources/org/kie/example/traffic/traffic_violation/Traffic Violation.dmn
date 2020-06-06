@@ -62,7 +62,7 @@
     <dmn:decisionTable id="_78B6C0A0-D696-4E81-92F5-0AA6ADCB9808" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_F71F6753-CD04-4D49-84FB-590F5A07102E">
         <dmn:inputExpression id="_151F121E-AFAB-4EDC-9995-06D03A158B35" typeRef="string">
-          <dmn:text>Violation.Type</dmn:text>
+          <dmn:text>tViolation.Type</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:input id="_F0A6414C-2843-435E-BF4C-EE40BE549108">
