@@ -148,8 +148,8 @@
     <dmn:context id="_F807BABB-47F9-4910-A09F-FE5D3A3E4E62">
       <dmn:contextEntry>
         <dmn:variable id="_0CD29719-67FB-4896-8C53-D87803B5F58F" name="Total_Points" typeRef="number"/>
-        <dmn:literalExpression>
-          <dmn:text>null // auto-filled by the editor to avoid missing empty expression.</dmn:text>
+        <dmn:literalExpression id="_DE55CE01-0903-499B-9FBC-117CE93A3D18">
+          <dmn:text>tFine.Points + tDriver.Points</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
       <dmn:contextEntry>
@@ -174,6 +174,9 @@
           <kie:ComponentWidths dmnElementRef="_F807BABB-47F9-4910-A09F-FE5D3A3E4E62">
             <kie:width>50.0</kie:width>
             <kie:width>334.0</kie:width>
+            <kie:width>714.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_DE55CE01-0903-499B-9FBC-117CE93A3D18">
             <kie:width>714.0</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_39175A9A-9654-4901-B486-E50AE96A1735">
