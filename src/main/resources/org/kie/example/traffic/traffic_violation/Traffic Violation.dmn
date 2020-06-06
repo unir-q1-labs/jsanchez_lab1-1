@@ -152,6 +152,11 @@
           <dmn:text>Driver.Points + Fine.Points</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:literalExpression id="_7F7A9E7D-C130-44B0-853F-4DC900C1D0FD">
+          <dmn:text>if Total Points >= 20 then "Yes" else "No"</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
     </dmn:context>
   </dmn:decision>
   <dmndi:DMNDI>
@@ -172,6 +177,9 @@
             <kie:width>714.0</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_DE55CE01-0903-499B-9FBC-117CE93A3D18">
+            <kie:width>714.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_7F7A9E7D-C130-44B0-853F-4DC900C1D0FD">
             <kie:width>714.0</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
