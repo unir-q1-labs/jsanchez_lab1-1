@@ -132,7 +132,7 @@
   </dmn:decision>
   <dmn:inputData id="_A9BA53B4-CD6D-4056-BD59-7FFC8594EC35" name="Violation">
     <dmn:extensionElements/>
-    <dmn:variable id="_BE32912F-9660-4028-A2AA-A926BF28F3DF" name="Violation"/>
+    <dmn:variable id="_BE32912F-9660-4028-A2AA-A926BF28F3DF" name="Violation" typeRef="tViolation"/>
   </dmn:inputData>
   <dmn:decision id="_A2028AD5-AA31-4C79-B70C-926CA21D4919" name="Should the driver be suspended?">
     <dmn:extensionElements/>
