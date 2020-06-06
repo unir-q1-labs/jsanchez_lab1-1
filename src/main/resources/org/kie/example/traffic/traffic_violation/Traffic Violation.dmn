@@ -105,7 +105,7 @@
           <dmn:text>"parking"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_9259FF3D-B79B-4897-B951-EE11F564AA9D">
-          <dmn:text></dmn:text>
+          <dmn:text>-</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_E45AEF2B-C39B-456D-B117-5A400FEEA672">
           <dmn:text>100</dmn:text>
@@ -119,7 +119,7 @@
           <dmn:text>"driving under the influence"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_64FF87BA-499F-46C6-B9B7-67F22E41E560">
-          <dmn:text></dmn:text>
+          <dmn:text>-</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_6FE3865A-98B7-4776-8E38-A1614D7B7F7C">
           <dmn:text>1000</dmn:text>
@@ -149,12 +149,12 @@
       <dmn:contextEntry>
         <dmn:variable id="_0CD29719-67FB-4896-8C53-D87803B5F58F" name="Total_Points" typeRef="number"/>
         <dmn:literalExpression id="_B1D4E21A-9C33-419F-80BB-94001E7524A8">
-          <dmn:text>Driver.Points + Fine.Points </dmn:text>
+          <dmn:text>Driver.Points + Fine.Points</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
       <dmn:contextEntry>
         <dmn:literalExpression id="_39175A9A-9654-4901-B486-E50AE96A1735">
-          <dmn:text>if Total_Points >= 20 then "Yes" Else "No"  </dmn:text>
+          <dmn:text>if Total_Points >= 20 then "Yes" Else "No"</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
     </dmn:context>
